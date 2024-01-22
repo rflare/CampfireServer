@@ -1,20 +1,28 @@
 import * as database from './database.js'
 import express from 'express'
+import cors from 'cors'
 
 const app = express()
 const port = 53342 
 
 export function init()
 {
+    app.use(cors())
+
+    app.use(express.json())
+
     app.use(express.static('dist'))
 
     app.get('/api/get', (req, res) => {
-		let posts = database.getPosts()
-   		res.status(200).json(posts)
+		database.getPosts()
+            .then((posts) => {
+   		        res.status(200).json(posts)
+            })    
     })
     
     app.post('/api/post', (req, res) => {
-        console.log(req);
+        const body = req.body;
+        database.insertPost(body.name, body.text, body.time)
     })
 
     app.listen(port, () => {

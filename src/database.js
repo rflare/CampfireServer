@@ -10,14 +10,28 @@ const pool = mysql.createPool({
     idleTimeout: 60000,
 })
 
-export function getPosts()
+export async function getPosts()
 {
-	let posts;
-	pool.query("SELECT * FROM posts ORDER BY RAND() LIMIT 50;", (err, result) => {
+    const sql = "SELECT * FROM posts ORDER BY RAND() LIMIT 50"
+    return new Promise((resolve, reject) => {
+        pool.query(sql, (err, rows) => {
+            if(err)
+                reject(err)
+
+            resolve(rows)
+        })
+    })
+}
+
+export function insertPost(name, text, time)
+{
+    pool.query(`INSERT INTO posts VALUES ("${sanitize(text)}", "${sanitize(name)}", ${time})`, (err, result) => {
 		if (err)
 			throw err;
-		posts = result;
 	})
+}
 
-	return posts;
+function sanitize(str)
+{
+    return str.replace("\"", "\\\"")
 }
