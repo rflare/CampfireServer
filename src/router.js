@@ -1,32 +1,46 @@
 import * as database from './database.js'
-import express from 'express'
-import cors from 'cors'
+import http from 'http'
 
-const app = express()
 const port = 53342 
 
 export function init()
 {
-    app.use(cors())
 
-    app.use(express.json())
+    const server = http.createServer((req, res) => {
+        const path = req.url
 
-    app.use(express.static('dist'))
-
-    app.get('/api/get', (req, res) => {
-		database.getPosts()
+        if(path === '/api/get') {
+		    database.getPosts()
             .then((posts) => {
-   		        res.status(200).json(posts)
+                res.writeHead(200, { "Content-Type": "application/json" });
+   		        res.end(JSON.stringify(posts))
             })    
-    })
-    
-    app.post('/api/post', (req, res) => {
-        const body = req.body;
-        database.insertPost(body.name, body.text, body.time)
+        }
+
+        if(path === '/api/post')
+        {
+            let body = []
+
+            req
+            .on('error', err => {
+                console.log(err)
+            })
+            .on('data', chunk => {
+                body.push(chunk)
+            })
+            .on('end', () => {
+                body = JSON.parse(Buffer.concat(body).toString())
+                console.log(body);
+                database.insertPost(body.name, body.text, body.time)
+            });
+
+
+        }
+
+
     })
 
-    app.listen(port, () => {
-        console.log(`Running on port ${port}`)
-        console.log(`Go to http://localhost:${port}/`)
-    })
+    server.listen(port, () => {
+        console.log(`App listening on port ${port}`);
+    });
 }
