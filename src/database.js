@@ -12,7 +12,7 @@ const pool = mysql.createPool({
 
 export async function getPosts()
 {
-    const sql = "SELECT * FROM posts ORDER BY RAND() LIMIT 50"
+    const sql = "SELECT * FROM posts ORDER BY RAND() LIMIT 100"
     return new Promise((resolve, reject) => {
         pool.query(sql, (err, rows) => {
             if(err)
