@@ -41,5 +41,6 @@ export function init()
 
     server.listen(port, () => {
         console.log(`App listening on port ${port}`);
+        console.log(`Go to http://127.0.0.1:${port}`);
     });
 }
