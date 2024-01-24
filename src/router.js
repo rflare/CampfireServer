@@ -30,7 +30,6 @@ export function init()
             })
             .on('end', () => {
                 body = JSON.parse(Buffer.concat(body).toString())
-                console.log(body);
                 database.insertPost(body.name, body.text, body.time)
             });
 
