@@ -33,5 +33,5 @@ export function insertPost(name, text, time)
 
 function sanitize(str)
 {
-    return str.replace("\"", "\\\"")
+    return str.replaceAll('\\', '\\\\').replace('\"', '\\\"')
 }
