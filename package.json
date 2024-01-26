@@ -4,10 +4,6 @@
     "description": "",
     "main": "index.js",
     "type": "module",
-    "scripts": {
-        "test": "nodemon src/index.js",
-        "start": "node src/index.js"
-    },
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^16.3.2",
