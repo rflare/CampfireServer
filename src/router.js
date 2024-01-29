@@ -1,7 +1,7 @@
 import * as database from './database.js'
 import http from 'http'
 
-const port = 53342 
+const port = process.env.SERVER_LOCAL_PORT
 
 export function init()
 {
