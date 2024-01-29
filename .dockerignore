@@ -1,0 +1,14 @@
+.env
+node_modules
+bin
+
+# Text
+docs
+*.md
+!README.md
+LICENSE*
+NOTICE*
+
+# Editor files
+.vscode
+*.sw?

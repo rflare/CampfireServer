@@ -34,5 +34,5 @@ DATABASE="<database>"
 
 In MySql shell, select the database and add the tables
 ```sh
-CREATE TABLE posts (text TEXT, name CHAR(30), time_millis BIGINT)
+CREATE TABLE posts (text TEXT, name CHAR(30), time_millis BIGINT);
 ```
