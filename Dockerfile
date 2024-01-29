@@ -4,9 +4,8 @@ WORKDIR /server
 
 COPY . .
 
-RUN npm i \
-&& chmod a+x scripts/run.sh
+RUN npm i
 
 EXPOSE 53342
 
-CMD scripts/run.sh
+CMD npm run start
