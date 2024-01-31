@@ -8,7 +8,7 @@ export function init()
 
     const server = http.createServer((req, res) => {
         const path = req.url
-
+        //Sends 100 posts to /api/get 
         if(path === '/api/get') {
 		    database.getPosts()
             .then((posts) => {
@@ -16,7 +16,7 @@ export function init()
    		        res.end(JSON.stringify(posts))
             })    
         }
-
+        //Inserts post from client into database
         if(path === '/api/post')
         {
             let body = []

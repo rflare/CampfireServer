@@ -7,11 +7,12 @@ const pool = mysql.createPool({
     password: process.env.DB_PASSWORD,
     waitForConnections: true,
     connectionLimit: 50,
-    idleTimeout: 60000,
+    idleTimeout: 60000, //1 minute timeout I think
 })
 
 export async function getPosts()
 {
+    //You can only fetch 100 posts
     const sql = "SELECT * FROM posts ORDER BY RAND() LIMIT 100"
     return new Promise((resolve, reject) => {
         pool.query(sql, (err, rows) => {
@@ -22,7 +23,7 @@ export async function getPosts()
         })
     })
 }
-
+//Insert post from outside into database
 export function insertPost(name, text, time)
 {
     pool.query(`INSERT INTO posts VALUES ("${sanitize(text)}", "${sanitize(name)}", ${time})`, (err, result) => {
@@ -30,7 +31,7 @@ export function insertPost(name, text, time)
 			throw err;
 	})
 }
-
+//Sanitize any inputs from outside
 function sanitize(str)
 {
     return str.replaceAll('\\', '\\\\').replaceAll('\"', '\\\"')
