@@ -2,8 +2,8 @@
 
 ## Quick Start
 
-1. `git clone https://github.com/rusluck/BigRusServer.git`
-    - Alternatively, you can use the submodule from [parent project](https://github.com/rusluck/BigRus.git)
+1. `git clone https://github.com/rflare/CampfireServer.git`
+    - Alternatively, you can use the submodule from [parent project](https://github.com/rflare/CampfireApp.git)
 2. `npm i`
 3. Create a `.env` file and add the following variables
    - `DB_HOST`

@@ -8,4 +8,4 @@ RUN npm i
 
 EXPOSE ${SERVER_LOCAL_PORT}
 
-CMD npm run start
+CMD npm start
