@@ -12,9 +12,9 @@ export function init()
         if(path === '/api/content/get') {
 		    database.getPosts()
             .then((posts) => {
-                res.writeHead(200, { "Content-Type": "application/json" });
+                res.writeHead(200, { "Content-Type": "application/json" })
    		        res.end(JSON.stringify(posts))
-            })    
+            })
         }
         //Inserts post from client into database
         if(path === '/api/content/post')
@@ -30,6 +30,7 @@ export function init()
             })
             .on('end', () => {
                 body = JSON.parse(Buffer.concat(body).toString())
+                console.log(body)
                 database.insertPost(body.name, body.text, body.time)
             });
 
