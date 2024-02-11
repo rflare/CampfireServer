@@ -26,7 +26,7 @@ export async function getPosts()
 //Insert post from outside into database
 export function insertPost(name, text, time)
 {
-    pool.query(`INSERT INTO posts (text, name, time_millis) VALUES ("${sanitize(text)}", "${sanitize(name)}", ${time})`, (err, result) => {
+    pool.query(`INSERT INTO posts (text, name, timeMillis) VALUES ("${sanitize(text)}", "${sanitize(name)}", ${time})`, (err, result) => {
 		if (err)
 			throw err;
 	})
