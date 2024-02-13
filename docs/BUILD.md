@@ -11,6 +11,7 @@
    - `DB_PASSWORD`
    - `DATABASE`
    - `SERVER_LOCAL_PORT`
+   - `POST_ENCRYPT_KEY`
 4. Run the project
    - For dev: `npm run test`
    - For build: `npm run start`

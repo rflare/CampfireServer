@@ -1,4 +1,5 @@
 import * as mysql from 'mysql2'
+import { Post } from './post'
 
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
@@ -24,15 +25,15 @@ export async function getPosts()
     })
 }
 //Insert post from outside into database
-export function insertPost(name, text, time)
+export function insertPost(post: Post)
 {
-    pool.query(`INSERT INTO posts (text, name, timeMillis) VALUES ("${sanitize(text)}", "${sanitize(name)}", ${time})`, (err, result) => {
+    pool.query(`INSERT INTO posts (text, name, timeMillis) VALUES ("${sanitize(post.text)}", "${sanitize(post.name)}", ${post.timeMillis})`, (err, result) => {
 		if (err)
 			throw err;
 	})
 }
 //Sanitize any inputs from outside
-function sanitize(str)
+function sanitize(str: String)
 {
-    return str.replaceAll('\\', '\\\\').replaceAll('\"', '\\\"')
+    return str.split('\\').join('\\\\').split('\"').join('\\\"')
 }
