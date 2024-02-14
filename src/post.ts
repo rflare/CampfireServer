@@ -1,6 +1,8 @@
-export default type Post = {
-    text: string,
-    timeMillis: number,
+type Post = {
+    text: string
+    timeMillis: number
     name: string
 
-}
+};
+
+export default Post;
