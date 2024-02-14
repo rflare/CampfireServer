@@ -1,5 +1,8 @@
 import 'dotenv/config'
 
-import * as router from './router'
+import Router from './router'
+import Database from './database'
 
-router.init()
+let database: Database = new Database()
+
+let router: Router = new Router(database)
