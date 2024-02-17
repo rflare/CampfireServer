@@ -1,42 +1,57 @@
 import Database from './database'
-import express, { Express } from 'express'
-import Post from './post'
+import express from 'express'
+import UserPost from './userpost'
+
+const app = express()
+const port = process.env.SERVER_LOCAL_PORT
 
 export default class Router {
-    private app: Express
-    private port
 
     private database: Database
 
     constructor(database: Database) {
 
-        this.app = express()
-        this.port = process.env.SERVER_LOCAL_PORT
-
         this.database = database
 
+        //Time to do express js stuff
 
+
+        //JSON is standard
+        app.use(express.json())
         
 
-        this.app.use(express.json())
-        
-        this.app.get("/api/content/get", (req, res) => {
-            this.database.getPosts()
-            .then((posts) => {
-                res.status(200).json(posts);
+        //Get posts
+        //Why tf does it have to return a promise
+        app.get("/api/userpost/get", (req, res) => {
+            
+            this.database.getUserPosts()
+            //Send data
+            .then((userPosts: UserPost[]) => {
+
+                const decryptedPosts = userPosts.map(userPost => UserPost.fromObject(userPost).decrypt())
+                //Send posts to client
+                res.status(200).json(decryptedPosts);
+
             })
         })
 
-        this.app.post("/api/content/post", (req, res) => {
-            const data: Post = req.body
+        //Put post to database
+
+        app.post("/api/userpost/post", (req, res) => {
+
+            const data: UserPost = UserPost.fromObject(req.body)
             console.log(data)
-            this.database.insertPost(data)
+            this.database.insertUserPost(data.encrypt())
+
         })
 
-        this.app.listen(this.port, () => {
-            console.log(`App listening on port ${this.port}`);
-            console.log(`Go to http://127.0.0.1:${this.port}`);
+        //Probably listening to different address on docker prod
+        app.listen(port, () => {
+
+            console.log(`App listening on port ${port}`);
+            console.log(`URL is http://127.0.0.1:${port}`);
         });
+
 
     }
 

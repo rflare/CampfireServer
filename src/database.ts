@@ -1,5 +1,5 @@
 import * as mysql from 'mysql2'
-import Post from './post'
+import UserPost from './userpost'
 
 export default class Database {
     private pool: mysql.Pool
@@ -8,7 +8,7 @@ export default class Database {
         this.pool = mysql.createPool({
             host: process.env.DB_HOST,
             user: process.env.DB_USERNAME,
-            database: process.env.DATABASE,
+            database: process.env.DB_DATABASE,
             password: process.env.DB_PASSWORD,
             waitForConnections: true,
             connectionLimit: 50,
@@ -16,18 +16,18 @@ export default class Database {
         })
     }
 
-    public getPosts() {
+    public getUserPosts(): Promise<UserPost[]> {
         //You can only fetch 100 posts
         const sql = `
         
-        SELECT * FROM posts 
+        SELECT * FROM userPosts 
         ORDER BY RAND() 
         LIMIT 100
         
         `
 
         return new Promise((resolve, reject) => {
-            this.pool.query(sql, (err, rows) => {
+            this.pool.query(sql, (err: mysql.QueryError, rows: UserPost[]) => {
                 if(err)
                     reject(err)
 
@@ -35,10 +35,10 @@ export default class Database {
             })
         })
     }
-    public insertPost(post: Post) {
+    public insertUserPost(userPost: UserPost) {
         const sql = `
         
-        INSERT INTO posts (
+        INSERT INTO userPosts (
             text,
             name,
             timeMillis
@@ -46,9 +46,9 @@ export default class Database {
 
         VALUES (
 
-            "${this.sanitize(post.text)}",
-            "${this.sanitize(post.name)}",
-            ${post.timeMillis}
+            "${userPost.text}",
+            "${userPost.name}",
+            ${userPost.timeMillis}
 
         )`
 
@@ -59,6 +59,8 @@ export default class Database {
 			    throw err;
 	    })
     }
+
+    //Pretty much useless now
     private sanitize(str: String)
     {
         return str
