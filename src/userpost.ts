@@ -5,12 +5,12 @@ const cipher = aes256.createCipher(process.env.USERPOST_ENCRYPT_KEY)
 export default class UserPost {
     text: string
     name: string
-    timeMillis: number
+    timeMillis: string
 
     constructor(
         text: string,
         name: string,
-        timeMillis: number
+        timeMillis: string
     ) {
         this.text = text
         this.name = name
@@ -29,7 +29,7 @@ export default class UserPost {
        return new UserPost(
            cipher.encrypt(this.text),
            cipher.encrypt(this.name),
-           this.timeMillis
+           cipher.encrypt(this.timeMillis)
        ) 
     }
 
@@ -37,7 +37,7 @@ export default class UserPost {
         return new UserPost(
             cipher.decrypt(this.text),
             cipher.decrypt(this.name),
-            this.timeMillis
+            cipher.decrypt(this.timeMillis)
         )
     }
 

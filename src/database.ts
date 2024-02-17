@@ -48,9 +48,9 @@ export default class Database {
 
             "${userPost.text}",
             "${userPost.name}",
-            ${userPost.timeMillis}
+            "${userPost.timeMillis}"
 
-        )`
+        );`
 
 
         this.pool.query(sql, (err, result) => {
