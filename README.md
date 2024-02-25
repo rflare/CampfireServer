@@ -1,6 +1,6 @@
 # Campfire Server
 
-This is the sever for the [Campfire project](https://github.com/rflare/CampfireApp.git).
+This is the sever for the [Campfire project](https://github.com/rflare/campfire.git).
 
 ## Getting Started
 

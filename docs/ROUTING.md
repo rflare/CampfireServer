@@ -1,3 +1,3 @@
 # Routing
 
-[Read here](https://github.com/rflare/CampfireApp/blob/master/docs/ROUTING.md)
+[Read here](https://github.com/rflare/campfire/blob/master/docs/ROUTING.md)
