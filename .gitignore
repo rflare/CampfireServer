@@ -1,6 +1,5 @@
 .env
 node_modules
-bin
 
 # Editor directories and files
 .vscode
