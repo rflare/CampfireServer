@@ -8,9 +8,14 @@ the subcomponents used in this software
 
 Apache License 2.0
 - denque (https://github.com/invertase/denque) [link](./licenses/LICENSE-denque.txt)
+- long (https://github.com/dcodeIO/long.js) [link](./licenses/LICENSE-long.txt)
 
 BSD 2-Clause "Simplified" License
 - dotenv (https://github.com/motdotla/dotenv) [link](./licenses/LICENSE-dotenv.txt)
+
+ISC License
+- inherits (https://github.com/isaacs/inherits) [link](./licenses/LICENSE-inherits.txt)
+- lru-cache (https://github.com/isaacs/node-lru-cache) [link](./licenses/LICENSE-lru-cache.txt)
 
 MIT License
 - accepts (https://github.com/jshttp/accepts) [link](./licenses/LICENSE-accepts.txt)
@@ -34,3 +39,18 @@ MIT License
 - escape-html (https://github.com/component/escape-html) [link](./licenses/LICENSE-escape-html.txt)
 - etag (https://github.com/jshttp/etag) [link](./licenses/LICENSE-etag.txt)
 - express (https://github.com/expressjs/express) [link](./licenses/LICENSE-express.txt)
+- finalhandler (https://github.com/pillarjs/finalhandler) [link](./licenses/LICENSE-finalhandler.txt)
+- forwarded (https://github.com/jshttp/forwarded) [link](./licenses/LICENSE-forwarded.txt)
+- fresh (https://github.com/jshttp/fresh/) [link](./licenses/LICENSE-fresh.txt)
+- function-bind (https://github.com/Raynos/function-bind) [link](./licenses/LICENSE-function-bind.txt)
+- generate-function (https://github.com/mafintosh/generate-function) [link](./licenses/LICENSE-generate-function.txt)
+- get-intrinsic (https://github.com/ljharb/get-intrinsic) [link](./licenses/LICENSE-get-intrinsic.txt)
+- gopd (https://github.com/ljharb/gopd) [link](./licenses/LICENSE-gopd.txt)
+- has-property-descriptors (https://github.com/inspect-js/has-property-descriptors) [link](./licenses/LICENSE-has-property-descriptors.txt)
+- has-proto (https://github.com/inspect-js/has-proto) [link](./licenses/LICENSE-has-proto.txt)
+- has-symbols (https://github.com/inspect-js/has-symbols) [link](./licenses/LICENSE-has-symbols.txt)
+- hasown (https://github.com/inspect-js/hasOwn) [link](./licenses/LICENSE-hasown.txt) 
+- http-errors (https://github.com/jshttp/http-errors) [link](./licenses/LICENSE-http-errors.txt)
+- iconv-lite (https://github.com/ashtuchkin/iconv-lite) [link](./licenses/LICENSE-iconv-lite.txt)
+- ipaddr.js (https://github.com/whitequark/ipaddr.js) [link](./licenses/LICENSE-ipaddr-js.txt)
+- is-property (https://github.com/mikolalysenko/is-property) [link](./licenses/LICENSE-is-property.txt)
