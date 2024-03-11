@@ -13,9 +13,13 @@ Apache License 2.0
 BSD 2-Clause "Simplified" License
 - dotenv (https://github.com/motdotla/dotenv) [link](./licenses/LICENSE-dotenv.txt)
 
+BSD 3-Cluase "New" or "Revised" License
+- qs (https://github.com/ljharb/qs) [link](./licenses/LICENSE-qs.txt)
+
 ISC License
 - inherits (https://github.com/isaacs/inherits) [link](./licenses/LICENSE-inherits.txt)
 - lru-cache (https://github.com/isaacs/node-lru-cache) [link](./licenses/LICENSE-lru-cache.txt)
+- setprototypeof (https://github.com/wesleytodd/setprototypeof) [link](./licenses/LICENSE-setprototypeof.txt)
 
 MIT License
 - accepts (https://github.com/jshttp/accepts) [link](./licenses/LICENSE-accepts.txt)
@@ -54,3 +58,34 @@ MIT License
 - iconv-lite (https://github.com/ashtuchkin/iconv-lite) [link](./licenses/LICENSE-iconv-lite.txt)
 - ipaddr.js (https://github.com/whitequark/ipaddr.js) [link](./licenses/LICENSE-ipaddr-js.txt)
 - is-property (https://github.com/mikolalysenko/is-property) [link](./licenses/LICENSE-is-property.txt)
+- media-typer (https://github.com/jshttp/media-typer) [link](./licenses/LICENSE-media-typer.txt)
+- merge-descriptors (https://github.com/sindresorhus/merge-descriptors) [link](./licenses/LICENSE-merge-descriptors.txt)
+- methods (https://github.com/jshttp/methods) [link](./licenses/LICENSE-methods.txt)
+- mime (https://github.com/broofa/mime) [link](./licenses/LICENSE-mime.txt)
+- mime-db (https://github.com/jshttp/mime-db) [link](./licenses/LICENSE-mime-db.txt)
+- mime-types (https://github.com/jshttp/mime-types) [link](./licenses/LICENSE-mime-types.txt)
+- ms (https://github.com/vercel/ms) [link](./licenses/LICENSE-ms.txt)
+- mysql2 (https://github.com/sidorares/node-mysql2) [link](./licenses/LICENSE-mysql2.txt)
+- named-placeholders (https://github.com/mysqljs/named-placeholders) [link](./licenses/LICENSE-named-placeholders.txt)
+- negotiator (https://github.com/jshttp/negotiator) [link](./licenses/LICENSE-negotiator.txt)
+- object-inspect (https://github.com/inspect-js/object-inspect) [link](./licenses/LICENSE-object-inspect.txt)
+- on-finished (https://github.com/jshttp/on-finished) [link](./licenses/LICENSE-on-finished.txt)
+- parseurl (https://github.com/pillarjs/parseurl) [link](./licenses/LICENSE-parseurl.txt)
+- path-to-regexp (https://github.com/pillarjs/path-to-regexp) [link](./licenses/LICENSE-path-to-regexp.txt)
+- proxy-addr (https://github.com/jshttp/proxy-addr) [link](./licenses/LICENSE-proxy-addr.txt)
+- range-parser (https://github.com/jshttp/range-parser) [link](./licenses/LICENSE-range-parser.txt)
+- raw-body (https://github.com/stream-utils/raw-body) [link](./licenses/LICENSE-raw-body.txt)
+- safe-buffer (https://github.com/feross/safe-buffer) [link] (./licenses/LICENSE-safe-buffer.txt)
+- safer-buffer (https://github.com/ChALkeR/safer-buffer) [link](./licenses/LICENSE-safer-buffer.txt)
+- send (https://github.com/pillarjs/send) [link](./licenses/LICENSE-send.txt)
+- seq-queue (https://www.npmjs.com/package/seq-queue) [link](./licenses/LICENSE-seq-queue.txt)
+- serve-static (https://github.com/expressjs/serve-static) [link](./licenses/LICENSE-serve-static.txt)
+- set-function-length (https://github.com/ljharb/set-function-length) [link](./licenses/LICENSE-set-function-length.txt)
+- side-channel (https://github.com/ljharb/side-channel) [link](./licenses/LICENSE-side-channel.txt)
+- sqlstring (https://github.com/mysqljs/sqlstring) [link](./licenses/LICENSE-sqlstring.txt)
+- statuses (https://github.com/jshttp/statuses) [link](./licenses/LICENSE-statuses.txt)
+- toidentifier (https://github.com/component/toidentifier) [link](./licenses/LICENSE-toidentifier.txt)
+- type-is (https://github.com/jshttp/type-is) [link](./licenses/LICENSE-type-is.txt)
+- unpipe (https://github.com/stream-utils/unpipe) [link](./licenses/LICENSE-unpipe.txt)
+- utils-merge (https://github.com/jaredhanson/utils-merge) [link](./licenses/LICENSE-utils-merge.txt)
+- vary (https://github.com/jshttp/vary) [link](./licenses/LICENSE-vary.txt)
