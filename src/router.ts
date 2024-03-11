@@ -5,6 +5,8 @@ import UserPost from './userpost'
 const app = express()
 const port = process.env.SERVER_LOCAL_PORT
 
+app.disable('x-powered-by')
+
 export default class Router {
 
     private database: Database
